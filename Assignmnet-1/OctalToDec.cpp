@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <iostream>
 #include <string.h>
+using namespace std;
 
 int oct2dec(char s[], int k) {
         if(k == 1) {
