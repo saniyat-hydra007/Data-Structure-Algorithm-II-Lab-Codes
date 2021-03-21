@@ -1,3 +1,13 @@
+/**
+ * @Author: Saniyat Mushrat Lamim
+ * @Date:   14-Mar-2021
+ * @Email:  robertarmstrong096@gmail.com
+ * @Last modified by:   Saniyat Mushrat Lamim
+ * @Last modified time: 21-Mar-2021
+ */
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,5 +28,5 @@ float SqRoot_req(float l,float h,float x){
         else return SqRoot_req(mid,h,x);
 }
 int main(){
-
+        cou
 }
