@@ -28,17 +28,52 @@ const int N = 1e3+2, M = 3e5+5, OO = 0x3f3f3f3f;
 // int dx[] = {1,-1,1,-1,2,2,-2,-2} , dy[] = {2,2,-2,-2,1,-1,1,-1}; // Knight Direction
 // int dx[] = {2,-2,1,1,-1,-1} , dy[] = {0,0,1,-1,1,-1}; // Hexagonal Direction
 
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct Item {
         float value;
         float weight;
 } Item;
 
-int main(){
+int cmpfunc(const void * a, const void * b) {
+        return ( ((Item*)b)->value / ((Item*)b)->weight -
+                 ((Item*)a)->value / ((Item*)a)->weight );
+}
 
-        Item items[100] = { { 60, 10 }, { 100, 20 }, { 120, 30 } };
+int main() {
+        Item items[] = {{30,5}, {20,10}, {100, 20},{90,30},{160,40}};
 
-        for (int i = 0; i < 3; i++) {
-                std::cout << items[i].value << " " << items[i].weight << '\n';
+        // for(int i=0; i<3; i++) {
+        //         std::cout << items[i].value << " " << items[i].weight << '\n';
+        // }
+
+        qsort(items, 5, sizeof(Item), cmpfunc);
+
+        // std::cout << '\n';
+        // for(int i=0; i<3; i++) {
+        //         std::cout << items[i].value << " " << items[i].weight << '\n';
+        // }
+
+        float w =60;
+        int i = 0;
+        float profit = 0;
+        while (w>0 && i<3) {
+                Item p = items[i];
+                float x;
+                if(w > p.weight) {
+                        x= 1;
+                        profit = profit + x*p.value;
+                        printf("Take %.2f %.2f %.2f\%\n",p.value,p.weight,x*100);
+                }
+                else{
+                        x = w/p.weight;
+                        profit = profit + x*p.value;
+                        printf("Take %.2f %.2f %.2f\%\n",p.value,p.weight,x*100);
+                }
+                i++;
+                w = w - x*p.weight;
         }
+        std::cout << "Total profit: " << profit << '\n';
         return 0;
 }
