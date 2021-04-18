@@ -39,8 +39,7 @@ const int N = 1e3+2, M = 3e5+5, OO = 0x3f3f3f3f;
 // int dx[] = {1,-1,1,-1,2,2,-2,-2} , dy[] = {2,2,-2,-2,1,-1,1,-1}; // Knight Direction
 // int dx[] = {2,-2,1,1,-1,-1} , dy[] = {0,0,1,-1,1,-1}; // Hexagonal Direction
 
-#include <stdio.h>
-#include <stdlib.h>
+
 
 typedef struct Item {
         float value;
@@ -48,8 +47,7 @@ typedef struct Item {
 } Item;
 
 int cmpfunc(const void * a, const void * b) {
-        return ( ((Item*)b)->value / ((Item*)b)->weight -
-                 ((Item*)a)->value / ((Item*)a)->weight );
+        return ( ((Item*)b)->value / ((Item*)b)->weight -((Item*)a)->value / ((Item*)a)->weight );
 }
 
 int main() {
