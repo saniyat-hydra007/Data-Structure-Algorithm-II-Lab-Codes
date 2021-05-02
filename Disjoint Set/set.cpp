@@ -58,6 +58,12 @@ void uinion_set(int x, int y) {
         p[a] = b;
 }
 
+bool same_set(int x,int y){
+        if (find_set(x) == find_set(y))
+                return true;
+        return false;
+}
+
 };
 
 
@@ -65,6 +71,22 @@ int main(){
         DisjointSet ds;
         for (int i = 0; i < N_VERTICES; i++) {
                 ds.make_set(i);
+        }
+
+        ds.uinion_set(0,5);
+        ds.uinion_set(1,0);
+        ds.uinion_set(3,7);
+        ds.uinion_set(7,2);
+        ds.uinion_set(0,7);
+
+        int a,b;
+        std::cin >> a;
+        std::cin >> b;
+        if(ds.same_set(a,b) == true) {
+                printf("%d and %d in same set\n",a,b);
+        }
+        else{
+                printf("%d and %d in different set\n",a,b);
         }
 
         return 0;
