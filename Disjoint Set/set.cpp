@@ -9,7 +9,7 @@
 #include "bits/stdc++.h"
 
 using namespace std;
-#define N_VERTICES 7
+#define N_VERTICES 10
 #define el "\n"
 #define F first
 #define S second
