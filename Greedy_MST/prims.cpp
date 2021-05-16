@@ -4,7 +4,7 @@
  * @Email:  robertarmstrong096@gmail.com
  * @Filename: prims.cpp
  * @Last modified by:   Saniyat Mushrat Lamim
- * @Last modified time: 09-May-2021
+ * @Last modified time: 16-May-2021
  */
 
 
@@ -22,6 +22,7 @@ int mat[N_VERTICES][N_VERTICES];
 void init_graph()
 {
         for(int i=0; i<N_VERTICES; i++)
+
         {
                 for(int j=0; j<N_VERTICES; j++)
                 {
