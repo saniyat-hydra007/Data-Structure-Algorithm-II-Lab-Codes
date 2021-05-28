@@ -1,3 +1,12 @@
+/**
+ * @Author: Saniyat Mushrat Lamim
+ * @Date:   23-May-2021
+ * @Email:  robertarmstrong096@gmail.com
+ * @Filename: bellmanFord.cpp
+ * @Last modified by:   Saniyat Mushrat Lamim
+ * @Last modified time: 23-May-2021
+ */
+
 #include "bits/stdc++.h"
 using namespace std;
 #include <stdio.h>
