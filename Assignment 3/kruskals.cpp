@@ -127,16 +127,16 @@ void sort_edge_list(Edge edgelist[], int n) {
 
 void Kruskals() {
         // write your code here
-        DisjointSet S;
-        for(int i=0; i<N_VERTICES; i++)
+        DisjointSet ds;
+        for(int i = 0; i < N_VERTICES; i++)
         {
-                S.make_set(i);
+                ds.make_set(i);
         }
 
-        Edge edgelist[10000];
-        int nE = create_edge_list(edgelist);
+        Edge e[10000];
+        int a = create_edge_list(e);
 
-        sort_edge_list(edgelist, nE);
+        sort_edge_list(e, a);
 
         for(int i=0; i<N_VERTICES; i++)
         {
@@ -145,9 +145,9 @@ void Kruskals() {
                         if(mat[i][j] != 0) {
                                 int u=i;
                                 int v=j;
-                                if(S.find_set(u) != S.find_set(v)) {
-                                        printf("%d %d\n", u, v);
-                                        S.union_set(S.find_set(u), S.find_set(v));
+                                if(ds.find_set(u) != ds.find_set(v)) {
+                                        std::cout << u << " " << v << '\n';
+                                        ds.union_set(ds.find_set(u), ds.find_set(v));
                                 }
 
                         }
