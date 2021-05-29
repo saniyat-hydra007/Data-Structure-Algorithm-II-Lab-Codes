@@ -162,16 +162,6 @@ int main()
 
         Graph G;
         G.init_graph();
-        G.add_edge(0, 1, 4);
-        G.add_edge(1, 2, 9);
-        G.add_edge(1, 4, 2);
-        G.add_edge(3, 4, 15);
-        G.add_edge(4, 5, 8);
-        G.add_edge(5, 6, 3);
-        G.add_edge(5, 7, 10);
-        G.add_edge(6, 7, 14);
-        G.add_edge(1, 7, 5);
-        G.add_edge(0, 7, 6);
 
         G.Kruskals();
 
