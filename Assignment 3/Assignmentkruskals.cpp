@@ -126,3 +126,27 @@ void sort_edge_list(Edge edgelist[], int n) {
         qsort(edgelist, n, sizeof(Edge), cmpfunc);
 }
 
+void Kruskals() {
+
+        DisjointSet ds;
+        for(int i = 0; i < N_VERTICES; i++)
+        {
+                ds.make_set(i);
+        }
+
+        Edge edgelist[10000];
+        int nE = create_edge_list(edgelist);
+        sort_edge_list(edgelist, nE);
+
+        for(int i = 0; i < N_VERTICES; i++)
+        {
+                if(ds.find_set(edgelist[i].u) != ds.find_set(edgelist[i].v))
+                {
+                        std::cout << edgelist[i].u << " " << edgelist[i].v << '\n';
+                        ds.union_set(edgelist[i].u, edgelist[i].v);
+                }
+        }
+}
+};
+
+
