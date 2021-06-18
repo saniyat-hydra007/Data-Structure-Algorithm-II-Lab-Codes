@@ -40,3 +40,17 @@ const int N = 1e3+2, M = 3e5+5, OO = 0x3f3f3f3f;
 
 
 #define M 100
+
+class Object {
+public:
+char key[100];
+int value;
+
+Object() {
+
+}
+Object(const char k[], int v) {
+        strcpy(key, k);
+        value = v;
+}
+};
