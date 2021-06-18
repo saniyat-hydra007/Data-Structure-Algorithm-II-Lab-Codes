@@ -54,3 +54,14 @@ Object(const char k[], int v) {
         value = v;
 }
 };
+
+class HashTable {
+Object Table[M];
+bool taken[M];
+public:
+HashTable() {
+        for(int i=0; i<M; i++) {
+                taken[i] = false;
+        }
+}
+
