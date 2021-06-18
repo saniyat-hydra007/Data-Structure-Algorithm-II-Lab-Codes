@@ -73,3 +73,54 @@ int h_aux(const char k[]) {
         }
         return sum%M;
 }
+
+int h(const char k[], int i) {
+        return (h_aux(k) + i)%M;
+}
+
+int insert(const char k[], int v) {
+        int i=0;
+        while(i != M) {
+                int j = h(k, i);
+                if(taken[j] == false) {
+                        Object o(k, v);
+                        Table[j] = o;
+                        taken[j] = true;
+                        return j;
+                }
+                i++;
+        }
+        printf("Hashtable overflow\n");
+        return -1;
+}
+
+int search(const char k[]) {
+        int i=0;
+        while(i != M ) {
+                int j = h(k, i);
+                if(taken[j] == false) {
+                        return -1;
+                }
+                if(taken[j] == true && strcmp(Table[j].key, k) == 0) {
+                        return Table[j].value;
+                }
+                i++;
+        }
+        return -1;
+}
+};
+
+int main() {
+
+        HashTable T;
+
+        T.insert("a", 1);
+        T.insert("b", 5);
+        T.insert("c", 189);
+
+        printf("%d\n", T.search("a"));
+        printf("%d\n", T.search("b"));
+        printf("%d\n", T.search("c"));
+
+        return 0;
+}
