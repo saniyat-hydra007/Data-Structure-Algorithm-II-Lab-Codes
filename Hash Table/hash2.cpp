@@ -65,3 +65,11 @@ HashTable() {
         }
 }
 
+int h_aux(const char k[]) {
+        int sum=0;
+        int len = strlen(k);
+        for(int i=0; i<len; i++) {
+                sum = sum + k[i];
+        }
+        return sum%M;
+}
